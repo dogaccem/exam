@@ -1,0 +1,12 @@
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\bin\Debug\net5.0\ExamSystem.Services.deps.json
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\bin\Debug\net5.0\ExamSystem.Services.dll
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\bin\Debug\net5.0\ref\ExamSystem.Services.dll
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\bin\Debug\net5.0\ExamSystem.Services.pdb
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.csproj.AssemblyReference.cache
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.AssemblyInfoInputs.cache
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.AssemblyInfo.cs
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.csproj.CoreCompileInputs.cache
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.dll
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ref\ExamSystem.Services.dll
+C:\Users\dogac\source\repos\ExamSystem\ExamSystem.Services\obj\Debug\net5.0\ExamSystem.Services.pdb

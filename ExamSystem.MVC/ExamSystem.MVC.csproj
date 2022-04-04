@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExamSystem.DataAccess\ExamSystem.DataAccess.csproj" />
+    <ProjectReference Include="..\ExamSystem.Services\ExamSystem.Services.csproj" />
+  </ItemGroup>
+
+</Project>

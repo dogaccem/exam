@@ -1,0 +1,226 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+@*<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                text-align: center;
+            }
+
+            form {
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+
+
+            @for (int i = 1; i <= 4; i++)
+            {
+                <br />
+                <input type="text" id="Text@(i)" placeholder="Question" /><br />
+                <input type="text" id="Option1@(i)" />
+                <input type="text" id="Option2@(i)" /> <br />
+                <input type="text" id="Option3@(i)" />
+                <input type="text" id="Option4@(i)" /><br />
+                <input type="text" id="CorrectAnswer@(i)" placeholder="Correct Option" /><br />
+            }
+            <button onclick="handleSubmit()"  >Kaydet1</button>
+
+
+
+        <script>
+
+            const handleSubmit = () => {
+
+                const params = [];
+
+                for (var i = 1; i <= 4; i++) {
+                    const param =
+                    {
+                        question: document.getElementById("Text" + i).value,
+                        answers: [document.getElementById("Option1" + i).value, document.getElementById("Option2" + i).value, document.getElementById("Option3" + i).value, document.getElementById("Option4" + i).value],
+                        correctAnswer: document.getElementById("CorrectAnswer" + i).value
+                    };
+                    params.push(param);
+
+                }
+                console.log(params);
+                fetch('https://localhost:44342/Exam/Index',
+                        {
+                            method: 'POST',
+                            headers: {
+                                ///*'Accept': 'application/json',*/
+                                //"Content-type": "application/json"
+                                'Accept': "application/json, text/plain, */*",
+                                'Content-Type': "application/json;charset=utf-8"
+                            },
+                            body: JSON.stringify(params)
+                        })
+                    .then(res => res.json())
+                    .then(function(data) {
+                        console.log(data);
+                    });
+
+            }
+
+
+            fetch("https://www.wired.com/feed")
+                .then(response => response.text())
+                .then(str => new DOMParser().parseFromString(str, "text/xml"))
+                .then(data => {
+
+                    console.log('data', data);
+                    const items = data.querySelectorAll("item");
+
+                    console.log('items', items);
+
+                    let html = '';
+
+                    html += `<select onchange="showDescription(event)">`;
+
+                    items.forEach(el => {
+
+                        let title = el.querySelector("title").innerHTML;
+
+                        const description = el.querySelector("description").innerHTML;
+
+                        html += `<option value="${description}">${title}</option>`;
+
+                    });
+
+                    html += `</select>`;
+                    document.getElementById("news").innerHTML = html;
+
+                });
+            showDescription = (event) => {
+
+                const selectedValue = event.target.value;
+                let html = ` <p>${selectedValue}</p>`;
+                document.getElementById("desc").innerHTML = html;
+
+            }
+
+        </script>
+
+    </body>
+
+    </html>*@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/Data/WiredData" method="post">
+        <div id="news"></div>
+        <div id="desc"></div>
+        <div class="form-group">
+            <script>
+                fetch("https://www.wired.com/feed")
+                    .then(response => response.text())
+                    .then(str => new DOMParser().parseFromString(str, "text/xml"))
+                    .then(data => {
+
+                        console.log('data', data);
+                        const items = data.querySelectorAll("item");
+
+                        console.log('items', items);
+
+                        let html = '';
+
+                        html += `<select onchange="showDescription(event)">`;
+
+                        items.forEach(el => {
+
+                            let title = el.querySelector("title").innerHTML;
+
+                            const description = el.querySelector("description").innerHTML;
+
+                            html += `<option value="${description}">${title}</option>`;
+
+                        });
+
+                        html += `</select>`;
+                        document.getElementById("news").innerHTML = html;
+
+                    });
+                showDescription = (event) => {
+
+                    const selectedValue = event.target.value;
+                    let html = ` <p>${selectedValue}</p>`;
+                    document.getElementById("desc").innerHTML = html;
+
+                }
+                const handleSubmit = () => {
+
+                    const params = [];
+
+                    for (var i = 1; i <= 4; i++) {
+                        const param =
+                        {
+                            question: document.getElementById("Text" + i).value,
+                            answers: [document.getElementById("Option1" + i).value, document.getElementById("Option2" + i).value, document.getElementById("Option3" + i).value, document.getElementById("Option4" + i).value],
+                            correctAnswer: document.getElementById("CorrectAnswer" + i).value
+                        };
+                        params.push(param);
+
+                    }
+                    console.log(params);
+                    fetch('https://localhost:44342/Exam/Index',
+                        {
+                            method: 'POST',
+                            headers: {
+                                ///'Accept': 'application/json',/
+                                //"Content-type": "application/json"
+                                'Accept': "application/json, text/plain, /",
+                                'Content-Type': "application/json;charset=utf-8"
+                            },
+                            body: JSON.stringify(params)
+                        })
+                        .then(res => res.json())
+                        .then(function (data) {
+                            console.log(data);
+                        });
+                }
+            </script>
+        </div>
+    </form>
+    @for (int i = 1; i <= 4; i++)
+    {
+<br />
+                <input type="text" id="Text@(i)" placeholder="Question" /><br />
+                                <input type="text" id="Option1@(i)" />
+                                                <input type="text" id="Option2@(i)" /> <br />
+                                                                <input type="text" id="Option3@(i)" />
+                                                                                <input type="text" id="Option4@(i)" /><br />
+                                                                                                <input type="text" id="CorrectAnswer@(i)" placeholder="Correct Option" /><br />}
+    <button onclick="handleSubmit()">Kaydet1</button>
+
+</body>
+
+</html>
